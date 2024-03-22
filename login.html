@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url(anim/admin.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: #111010 10px 50px 50px inset;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            background-color:#212121;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            animation: slide-in 1s ease-out;
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .container h1 {
+            font-size: 32px;
+            font-family: 'Luckiest Guy', cursive;
+            color: #90818b;
+            text-shadow: 0 6px 0 #212121, 0 -6px 0 #212121, 6px 0 0 #212121, -6px 0 0 #212121;
+            animation: fade-in 1s ease-out;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .container input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            animation: slide-up 1s ease-out;
+        }
+
+        @keyframes slide-up {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            background-color: rgba(58, 13, 48, 0.42);
+            color: #fd93c1;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            animation: slide-up 1s ease-out;
+        }
+
+        .container button:hover {
+            background-color: #534e52;
+            color: #fff;
+        }
+
+        .container input:invalid + span {
+            display: block;
+            color: rgb(44, 42, 42);
+        }
+
+        .container input + span {
+            display: none;
+        }
+
+        .click {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            animation: fade-in 1s ease-out;
+        }
+
+        .click button {
+            background: transparent;
+            color: #ed1334;
+            border: 2px solid #963f6c;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .click button:hover {
+            background-color: #963f6c;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="click"> 
+    <button onclick="window.location.href='userlogin.html';">
+        User login
+    </button>
+</div>
+<div class="container">
+    <h1>Login Page</h1>
+    <form action="/action_page.php" method="post">
+        <input type="text" name="username" placeholder="Username or email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$|^[A-Za-z0-9_]+$">
+        <input type="password" name="password" placeholder="Password" required>
+        <button onclick="window.location.href='traveler.html';">
+          Login
+        </button>
+    </form>
+</div>
+</body>
+</html>

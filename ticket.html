@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Times - Your Source for News and Updates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("img/news.jpg");
+           /* background: linear-gradient(110deg, black, white);*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .navbar {
+            background: linear-gradient(#7A7B7D, #b7b9bc);
+            border-bottom-right-radius: 45px;
+            box-shadow: 5px 5px 10px black;
+           
+            position:relative;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: #181e1e;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgb(48, 45, 45), 5px 6px 7px rgb(30, 28, 28);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #000000e6;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            border-radius: 50%;
+            box-shadow: 8px 5px 10px rgba(26, 118, 139, 0.973);
+        }
+
+        .tours {
+            margin-top: 15px;
+            margin-right: 30%;
+            max-width:max-content;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: rgba(83, 76, 76, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            display:inline-block;
+           
+
+        }
+
+        .tour-card {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 10px;
+            padding: 20px;
+            height: 400px;
+            width: 300px;
+            display: inline-block;
+            overflow:hidden;
+           
+            background: rgba(0, 0, 0, 0.56789);
+            
+        }
+
+        /* Optional: Style for scrollbar */
+    
+
+        .tour-card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .tour-card h2,
+        .tour-card p,
+        .tour-card a {
+            color: #fff;
+            margin: 0;
+        }
+
+        .tour-card a {
+            display: block;
+            margin-top: 10px;
+            color: #2B444E;
+        }
+
+        .tour-card a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: grid;
+            text-decoration: none;
+            color: rgb(200, 190, 190);
+            background-color: #b4bbbc;
+            border-radius: 5px;
+            justify-content: center;
+        }
+
+        .cta-button:hover {
+            background-color: #6a6e70;
+        }
+
+        .open-button {
+            background-image: -webkit-radial-gradient(rgb(143, 128, 128), rgb(106, 120, 106), rgb(70, 70, 72));
+            color: rgb(244, 244, 248);
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+            box-shadow: 5px 5px 10px rgb(53, 56, 58) inset;
+        }
+
+        footer {
+            margin-top: 10px;
+            padding: 5px;
+            
+            color: #0f0e0e;
+            text-align: center;
+            font-size: 12px;
+            border: 1px;
+            border-radius: 10px;
+        }
+
+        .comment-section {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #1b1919;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            padding: 5px;
+            background-color: #ccc6c6;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .comment strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #0f0e0e;
+        }
+
+        .comment p {
+            color: #1a1717;
+        }
+
+        form {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        textarea {
+            padding: 4px;
+            margin-bottom: 5px;
+            background-color: #000000e6;
+            border: 1px solid #272424;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 4px;
+            background-color: #e8dcdc;
+            color: rgb(255, 254, 254)c2c;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .tabl{
+            display: block;
+           width: fit-content;
+           padding-top: 110%;
+        }
+
+        .tab{
+            border: solid 5px black;
+            background-color: #ddd4d4e6;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Bharat Times</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="services.html">Just write</a></li>
+                <li><a href="about.html">Tech</a></li>
+                <li><a href="img/contact.html">Contact-us</a></li>
+                <li><a href="userlogin.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="tours">
+        <div class="tour-card">
+            <img src="https://placekitten.com/300/150" alt="Card Image">
+            <div class="card-content">
+                <h2>Blog Post Title 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.</p>
+                <a href="blog/b1.html" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <div class="tour-card">
+            <img src="https://placekitten.com/300/151" alt="Card Image">
+            <div class="card-content">
+                <h2>Exploring the Cosmos</h2>
+                <p>2023 Random Space Exploration Blog. All rights reserved.</p>
+                <a href="blog/b2.html" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <div class="tour-card">
+            <img src="https://placekitten.com/300/151" alt="Card Image">
+            <div class="card-content">
+                <h2>Cultivating Calm</h2>
+                <p>The Healing Power of Mindfulness Meditation</p>
+                <a href="blog/b3.html" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <div class="tour-card">
+            <img src="https://placekitten.com/300/151" alt="Card Image">
+            <div class="card-content">
+                <h2>Blog Post Title 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.</p>
+                <a href="blog/b4.html" class="read-more">Read more</a>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <table border="1" class="tab">
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+            <th>Header 4</th>
+            <th>Header 5</th>
+            <th>Header 6</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Row 1, Col 1</td>
+            <td>Row 1, Col 2</td>
+            <td>Row 1, Col 3</td>
+            <td>Row 1, Col 4</td>
+            <td>Row 1, Col 5</td>
+            <td>Row 1, Col 6</td>
+          </tr>
+          <tr>
+            <td>Row 2, Col 1</td>
+            <td>Row 2, Col 2</td>
+            <td>Row 2, Col 3</td>
+            <td>Row 2, Col 4</td>
+            <td>Row 2, Col 5</td>
+            <td>Row 2, Col 6</td>
+          </tr>
+          <tr>
+            <td>Row 3, Col 1</td>
+            <td>Row 3, Col 2</td>
+            <td>Row 3, Col 3</td>
+            <td>Row 3, Col 4</td>
+            <td>Row 3, Col 5</td>
+            <td>Row 3, Col 6</td>
+          </tr>
+          <tr>
+            <td>Row 4, Col 1</td>
+            <td>Row 4, Col 2</td>
+            <td>Row 4, Col 3</td>
+            <td>Row 4, Col 4</td>
+            <td>Row 4, Col 5</td>
+            <td>Row 4, Col 6</td>
+          </tr>
+          <tr>
+            <td>Row 5, Col 1</td>
+            <td>Row 5, Col 2</td>
+            <td>Row 5, Col 3</td>
+            <td>Row 5, Col 4</td>
+            <td>Row 5, Col 5</td>
+            <td>Row 5, Col 6</td>
+          </tr>
+          <tr>
+            <td>Row 6, Col 1</td>
+            <td>Row 6, Col 2</td>
+            <td>Row 6, Col 3</td>
+            <td>Row 6, Col 4</td>
+            <td>Row 6, Col 5</td>
+            <td>Row 6, Col 6</td>
+          </tr>
+        </tbody>
+      </table>
+
+    <footer>
+      <div class="comment-section">
+          <h2>Comments</h2>
+          
+          <div class="comment">
+              <strong>John Doe</strong>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+
+          <div class="comment">
+              <strong>Jane Smith</strong>
+              <p>Great article! I really enjoyed reading it.</p>
+          </div>
+
+          <!-- Add more comments as needed -->
+
+          <form>
+              <label for="comment">Leave a Comment:</label>
+              <textarea id="comment" name="comment" rows="4" placeholder="Type your comment here"></textarea>
+              <button type="submit">Submit</button>
+          </form>
+      </div>
+  </footer>
+
+</body>
+
+</html>

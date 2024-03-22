@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traveler Details and Booking Panel</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/4.2.8/css/tooltipster.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    background-image: url('default-bg.jpg'); /* Default background image */
+    background-size: cover;
+    background-blur: 10px;
+    transition: background-image 0.5s;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  .traveler-details {
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-in-out;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    animation: scaleIn 1s ease-in-out;
+  }
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .cancel-button {
+    background-color: #ff6347;
+    color: #fff;
+  }
+  .cancel-button:hover {
+    background-color: #e74c3c;
+  }
+  .change-date-button {
+    background-color: #3498db;
+    color: #fff;
+  }
+  .change-date-button:hover {
+    background-color: #2980b9;
+  }
+  .check-availability-button {
+    background-color: #27ae60;
+    color: #fff;
+  }
+  .check-availability-button:hover {
+    background-color: #219d52;
+  }
+  .change-destination-button {
+    background-color: #9b59b6;
+    color: #fff;
+  }
+  .change-destination-button:hover {
+    background-color: #8e44ad;
+  }
+  .tooltip-content {
+    display: none;
+  }
+  
+  /* Additional responsive styling */
+  @media screen and (max-width: 600px) {
+    .container {
+      padding: 10px;
+      max-width: 100%;
+    }
+    .button-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .button {
+      margin-top: 10px;
+    }
+  }
+  
+  /* Modern graphical enhancements */
+  .button i {
+    font-size: 24px;
+  }
+  .button-tooltip {
+    position: relative;
+  }
+  .button-tooltip .tooltip-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1;
+  }
+  .button-tooltip:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/4.2.8/js/tooltipster.bundle.min.js"></script>
+<script>
+  // Function to handle the Cancel Ticket button
+  function cancelTicket() {
+    const messageContainer = document.getElementById('message-container');
+    messageContainer.textContent = 'Ticket has been canceled.';
+  }
+
+  // Function to handle the Change Date button
+  function changeDate() {
+    const currentDate = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const newDate = prompt('Select a new departure date:', currentDate.toLocaleDateString('en-US', options));
+    if (newDate !== null && newDate !== '') {
+      const departureDateElement = document.querySelector('.traveler-details p:nth-child(3)');
+      departureDateElement.textContent = `Departure Date: ${newDate}`;
+      const messageContainer = document.getElementById('message-container');
+      messageContainer.textContent = 'Departure date has been changed.';
+    }
+  }
+
+  // Function to check availability of the selected departure date
+  function checkAvailability() {
+    const departureDateElement = document.querySelector('.traveler-details p:nth-child(3)');
+    const departureDate = departureDateElement.textContent.split(': ')[1];
+    const availability = confirm(`Check availability for ${departureDate}?`);
+    const messageContainer = document.getElementById('message-container');
+    if (availability) {
+      departureDateElement.style.color = 'green';
+      messageContainer.textContent = `Departure date ${departureDate} is available.`;
+    } else {
+      departureDateElement.style.color = 'initial';
+      messageContainer.textContent = `Departure date ${departureDate} is not available.`;
+    }
+  }
+
+  // Function to handle changing the destination
+  function changeDestination() {
+    const newDestination = prompt('Enter the new destination:');
+    if (newDestination !== null && newDestination !== '') {
+      const destinationElement = document.querySelector('.traveler-details p:nth-child(2)');
+      destinationElement.textContent = `Destination: ${newDestination}`;
+      const messageContainer = document.getElementById('message-container');
+      messageContainer.textContent = 'Destination has been changed.';
+      updateBackgroundImage(newDestination);
+    }
+  }
+
+  // Function to dynamically change the background image based on destination
+  function updateBackgroundImage(destination) {
+    const body = document.querySelector('body');
+    body.style.backgroundImage = `url('${destination}-bg.jpg')`;
+  }
+
+  // Initialize tooltips
+  $(document).ready(function() {
+    $('.button-tooltip').tooltipster({
+      theme: 'tooltipster-shadow',
+      animation: 'grow',
+      contentAsHTML: true,
+      interactive: true,
+      interactiveTolerance: 200,
+      functionReady: function(instance, helper) {
+        const content = instance.content();
+        const button = helper.origin;
+        const buttonPosition = button.getBoundingClientRect();
+        const buttonCenterX = buttonPosition.left + buttonPosition.width / 2;
+        const tooltipWidth = instance.tooltipClone().offsetWidth;
+        const leftOffset = buttonCenterX - tooltipWidth / 2;
+        content.style.left = leftOffset + 'px';
+      },
+    });
+  });
+</script>
+</head>
+<body>
+  <div class="container">
+    <div class="traveler-details">
+      <h2>Traveler Details</h2>
+      <p>Name: Jane Smith</p>
+      <p>Destination: Tokyo</p>
+      <p>Departure Date: September 10, 2023</p>
+      <p>Booking ID: ABC456</p>
+    </div>
+    <div class="button-container">
+      <div class="button-tooltip" title="Cancel Ticket">
+        <button class="button cancel-button" onclick="cancelTicket()">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="tooltip-content">Cancel Ticket</div>
+      </div>
+      <div class="button-tooltip" title="Change Date">
+        <button class="button change-date-button" onclick="changeDate()">
+          <i class="fas fa-calendar-alt"></i>
+        </button>
+        <div class="tooltip-content">Change Date</div>
+      </div>
+      <div class="button-tooltip" title="Check Availability">
+        <button class="button check-availability-button" onclick="checkAvailability()">
+          <i class="fas fa-check-circle"></i>
+        </button>
+        <div class="tooltip-content">Check Availability</div>
+      </div>
+      <div class="button-tooltip" title="Change Destination">
+        <button class="button change-destination-button" onclick="changeDestination()">
+          <i class="fas fa-map-marker-alt"></i>
+        </button>
+        <div class="tooltip-content">Change Destination</div>
+      </div>
+    </div>
+    <div id="message-container" style="margin-top: 20px;"></div>
+  </div>
+</body>
+</html>

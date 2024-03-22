@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fts</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-box {
+        height: 50vh;
+        overflow-y: scroll;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .message {
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-bottom: 5px;
+    }
+
+    .input-box {
+        padding: 10px;
+        border-top: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .file-info {
+        margin-bottom: 10px;
+    }
+
+    .file-info p {
+        margin: 0;
+    }
+
+    .file-info p span {
+        font-weight: bold;
+    }
+
+    .input-box input[type="text"] {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+    }
+
+    .input-box button {
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .input-box button:hover {
+        background-color: #0056b3;
+    }
+
+    .video-call-button {
+        padding: 8px 15px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .video-call-button:hover {
+        background-color: #218838;
+    }
+
+    .file-input {
+        display: none;
+    }
+
+    .file-label {
+        padding: 8px 15px;
+        background-color: #ffc107;
+        color: #212529;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .file-label:hover {
+        background-color: #e0a800;
+    }
+
+    .delete-button {
+        padding: 8px 15px;
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .delete-button:hover {
+        background-color: #c82333;
+    }
+
+    .permission-button {
+        padding: 8px 15px;
+        background-color: #17a2b8;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .permission-button:hover {
+        background-color: #138496;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="chat-box" id="chatBox">
+        <div class="message">Welcome to the File-system!</div>
+    </div>
+    <div class="input-box">
+        <label for="fileUpload" class="file-label">Upload File</label>
+        <input type="file" id="fileUpload" class="file-input" onchange="uploadFile(this.files)">
+        <div class="file-info" id="fileInfo"></div> <!-- Add detail section -->
+        <select id="fileSelect"></select>
+        <button class="delete-button" onclick="deleteFile()">Delete File</button>
+        <button class="permission-button" onclick="changePermission()">Change Permission</button>
+    </div>
+</div>
+
+<script>
+    var selectedFile = null;
+
+    function startVideoCall() {
+        alert("Starting video call...");
+    }
+
+    function uploadFile(files) {
+        var file = files[0];
+        if (file) {
+            var fileInfo = document.getElementById("fileInfo");
+            fileInfo.innerHTML = `
+                <p><span>File Name:</span> ${file.name}</p>
+                <p><span>Uploaded By:</span> User123</p> <!-- Change to actual user -->
+                <p><span>Upload Time:</span> ${new Date().toLocaleString()}</p>
+            `;
+            selectedFile = file;
+        }
+    }
+
+    function deleteFile() {
+        if (selectedFile) {
+            alert("Deleting file: " + selectedFile.name);
+            selectedFile = null;
+            document.getElementById("fileInfo").innerHTML = "";
+            document.getElementById("fileSelect").innerHTML = "";
+        } else {
+            alert("No file selected to delete.");
+        }
+    }
+
+    function changePermission() {
+        if (selectedFile) {
+            alert("Changing permission for file: " + selectedFile.name);
+        } else {
+            alert("No file selected to change permission.");
+        }
+    }
+
+    document.getElementById("messageInput").addEventListener("keypress", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            sendMessage();
+        }
+    });
+</script>
+</body>
+</html>

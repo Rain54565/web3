@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+
+    
+</body>
+</html>
+  <style>
+
+
+
+
+body {
+margin:0;
+padding:0;
+overflow:hidden;
+  background-image: url(https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+;
+background-repeat: no-repeat;
+background-size: cover;
+
+background-position: 10%;
+
+}
+section{
+height:100%;
+width:100%;
+position:absolute ;
+background-image: url(https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+border-radius: 7%;
+opacity: 0.;
+background-repeat: no-repeat;
+background-size: cover;
+filter: blur(100%);
+  -webkit-filter: blur(10%);
+  animation: bottom 5s step-start 30s;
+}
+
+@keyframes  bottom  {
+    0% {background-color: #53002b;}
+    20% {background-color: #af0069;}
+    40% {background-color: #c40671;}
+    80% {background-color: #ac0556;}
+    100% {background-color: #e50098;}
+}
+.leaf{
+    position:absolute ;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+.leaf div{
+position:absolute ;
+display:block ;
+}
+.leaf div:nth-child(1){
+    left:20%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-2s;
+
+}
+.leaf div:nth-child(2){
+    left:70%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-4s;
+}
+.leaf div:nth-child(3){
+    left:10%; 
+    animation:fall 20s linear infinite ;
+    animation-delay:-7s;
+    
+}
+.leaf div:nth-child(4){
+    left:50%; 
+   animation:fall 18s linear infinite ; 
+   animation-delay:-5s;
+}
+.leaf div:nth-child(5){
+    left:85%; 
+    animation:fall 14s linear infinite ;
+    animation-delay:-5s;
+}
+.leaf div:nth-child(6){
+    left:15%; 
+    animation:fall 16s linear infinite ;
+    animation-delay:-10s;
+}
+.leaf div:nth-child(7){
+    left:90%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-4s;
+}
+
+@keyframes fall{
+    0%{
+        opacity:1;
+        top:-10%;
+        transform:translateX (20px) rotate(0deg);
+    }
+    20%{
+        opacity:0.8;
+        transform:translateX (-20px) rotate(45deg);
+    }
+    40%{
+
+        transform:translateX (-20px) rotate(90deg);
+    }
+    60%{
+        
+       transform:translateX (-20px) rotate(135deg); 
+    }
+    80%{
+    
+        transform:translateX (-20px) rotate(180deg);
+    }
+    100%{
+        
+        top:110%;
+        transform:translateX (-20px) rotate(225deg);
+    }
+    }
+.leaf1{
+    transform: rotateX(180deg);
+}
+}
+h2{
+    position:absolute ;
+    top:40%;
+    width:100%;
+	  font-family: 'Courgette', cursive;
+    font-size:4em;
+    text-align:center;
+    transform:translate ;
+    color:#7e3d3d;
+    transform:translateY (-50%);
+}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      width: 40%;
+      max-width: 500px;
+      margin: 50px auto;
+      background-color: #c02e74;
+      padding: 40px;
+      border-radius: 10px;
+      opacity: 0.8;
+    }
+
+    .container h1 {
+        text-align: center;
+        font-size: 40pt;
+  font-family: 'Luckiest Guy';
+  color: #963f6c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow:   0px -6px 0 #212121,  
+                 0px -6px 0 #212121,
+                 0px  6px 0 #212121,
+                 0px  6px 0 #212121,
+                -6px  0px 0 #212121,  
+                 6px  0px 0 #212121,
+                -6px  0px 0 #212121,
+                 6px  0px 0 #212121,
+                -6px -6px 0 #212121,  
+                 6px -6px 0 #212121,
+                -6px  6px 0 #212121,
+                 6px  6px 0 #212121,
+                -6px  18px 0 #212121,
+                 0px  18px 0 #212121,
+                 6px  18px 0 #212121,
+                 0 19px 1px rgba(0,0,0,.1),
+                 0 0 6px rgba(0,0,0,.1),
+                 0 6px 3px rgba(0,0,0,.3),
+                 0 12px 6px rgba(0,0,0,.2),
+                 0 18px 18px rgba(0,0,0,.25),
+                 0 24px 24px rgba(0,0,0,.2),
+                 0 36px 36px rgba(0,0,0,.15);
+
+    }
+
+    .container input {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      outline: none;
+    }
+
+    .container button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 5px;
+      outline: none;
+      background-color: #3a0d306b;
+      color: rgb(253, 147, 193);
+      font-size: 18px;
+      border-radius: 10px;
+      opacity: 0.;
+    }
+
+    /* Custom error message */
+    .container input:invalid + span {
+      display: block;
+      color: red;
+    }
+
+    .container input + span {
+      display: none;
+    }
+
+    .button {opacity: 1;}
+    
+  </style>
+</head>
+<body>
+
+    <div class="green"></div>
+
+  <div class="container">
+  <div class="login">
+  <centre><h1>Login Page</h1></centre>
+  </div>
+  
+  <form action="/action_page.php" method="post">
+    
+   
+    <input type="text" name="username" placeholder="Username or email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$|^[A-Za-z0-9_]+$">
+    
+   
+
+    <input type="password" name="password" placeholder="Password" required>
+    
+        <div class="">
+        <button type="submit">Login</button>
+            </div>
+   
+</div>
+
+  </form>
+  
+</div>
+
+<section>
+    <div class="whole"></div>
+  
+    <div class="leaf">
+        <div>  <img src="butt.png" height="75px" width="75px"></img></div>
+        <div>  <img src="butt.png" height="75px" width="75px"></img></div>
+        <div>  <img src="butt.png" height="75px" width="75px"></img></div>
+        <div>  <img src="butt.png" height="75px" width="75px"></img></div>
+    </div>
+     
+<div class="leaf leaf1">
+<div>  <div> <div>  <img src="butt.png" height="75px" width="75px"></img></div></div>
+       
+</div>
+<div class="leaf leaf2">
+    <div>  <img src="butt.png" height="75px" width="75px"></img></div>
+    <div>  <img src="butt.png" height="75px" width="75px"></img></div>
+ </div>
+     </section>
+
+</body>
+</html>
+
+
+
+
+

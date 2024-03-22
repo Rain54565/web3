@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Times - Your Source for News and Updates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            
+            background-image:url("img/news.jpg");/
+           /* background-image: -webkit-radial-gradient(rgb(67, 142, 142), rgb(193, 239, 239), rgb(64, 106, 106));*/
+          
+            background: linear-gradient(110deg,black,white);
+           
+            background-repeat: no-repeat;
+         
+          
+
+           
+          
+        }
+
+        .navbar {
+            border-style: solid,#7A7B7D;
+            background:linear-gradient(#7A7B7D, #b7b9bc);
+            border-bottom-right-radius: 45px;
+            box-shadow: 5px 5px 10px black;
+            padding: 1rem;
+            position:-ms-page;
+    
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: #181e1e;
+            text-decoration: solid rgb(106, 120, 106);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow:1px 1px 1px rgb(48, 45, 45),5px 6px 7px rgb(30, 28, 28);
+   
+            
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #000000e6;
+            text-decoration: none;
+            font-size: 1rem;
+            font-size: 150%;
+        }
+
+        .nav-links a:hover {
+            border-radius: 50%;
+            box-shadow: 8px 5px 10px rgba(26, 118, 139, 0.973);
+        }
+
+        #tours {
+            margin-top:15px;
+           max-width: 75%;
+            display:inline-block;
+            border-width: 100px;
+             border: 5px;
+             border-style: ridge;
+             border-radius: 19px;
+            justify-content:center;
+            align-items: center;
+            flex-wrap: wrap;
+          /* background:radial-gradient(rgb(112, 198, 226), rgb(188, 192, 192) ,rgb(33, 93, 93));*/
+            border-color: #625d5de6;
+            height:100%;
+           
+            
+        }
+
+        .tour-packages {
+            text-align: center;
+            width: 100%;
+        }
+
+        .tour-card {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    padding: 10px; /* Adjust padding as needed */
+    height: 95%; /* Use viewport height instead of a percentage for better responsiveness */
+    width: 90%; /* Use viewport width instead of a percentage for better responsiveness */
+    display: inline-block;
+    overflow: auto; /* Use 'auto' to only show scrollbar when needed */
+    resize: both;
+    background: rgba(0, 0, 0, 0.56789);
+        }
+
+/* Optional: Style for scrollbar */
+.tour-card::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tour-card::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.tour-card::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.56789);
+}
+
+
+        .tour-card img {
+            width:;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .tour-card h2 {
+            color: #e0dddd;
+            padding: 1rem;
+            margin: 0;
+        }
+
+        .tour-card p {
+            color: #c4c0c0;
+            padding: 1rem;
+            margin: 0;
+        }
+
+        .tour-card a {
+            color:#2B444E;
+            padding: 1rem;
+            justify-content: center;
+            margin: 0;
+        }
+        .cta-button {
+            display:grid;
+            text-decoration: none;
+            color: rgb(32, 31, 31);
+            background-color: #5f6d71;
+            border-radius: 5px;
+            justify-content: center;
+        }
+
+        .cta-button:hover {
+            background-color: #6a6e70;
+        }
+
+        .open-button {
+            background-image: -webkit-radial-gradient(rgb(143, 128, 128), rgb(106, 120, 106), rgb(70, 70, 72));
+            color: rgb(244, 244, 248);
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+            box-shadow: 5px 5px 10px rgb(53, 56, 58) inset;
+        }
+
+        
+
+          
+    </style>
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="#">Bharat Times</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="services.html">World</a></li>
+            <li><a href="about.html">Tech</a></li>
+            <li><a href="img/contact.html">Explainer's</a></li>
+            <li><a href="userlogin.html">Login</a></li>
+        </ul>
+    </div>
+   </nav>
+
+
+            <section id="tours">
+               
+          <div class="tour-card">
+            <div class="card">
+              <img src="https://placekitten.com/300/150" alt="Card Image">
+              <div class="card-content">
+                  <h2>Blog Post Title 1</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <a href="#" class="read-more">Read more</a>
+              </div>
+          </div>
+           <br>
+          <div class="card">
+            <img src="https://placekitten.com/300/151" alt="Card Image">
+            <div class="card-content">
+                <h2>Blog Post Title 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <br>
+        <div class="card">
+          <img src="https://placekitten.com/300/151" alt="Card Image">
+          <div class="card-content">
+              <h2>Blog Post Title 2</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="#" class="read-more">Read more</a>
+          </div>
+      </div>
+
+      <br>
+        <div class="card">
+          <img src="https://placekitten.com/300/151" alt="Card Image">
+          <div class="card-content">
+              <h2>Blog Post Title 2</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="#" class="read-more">Read more</a>
+          </div>
+      </div>
+            
+
+         
+        </div>
+             </section>
+
+  
+        
+</section>
+</body>

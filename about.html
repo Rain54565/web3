@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Adventure Travels</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #70d3fb;
+            box-shadow: 5px 5px 500px rgb(58, 144, 201) inset;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .about-us {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .about-us h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .about-us p {
+            font-size: 18px;
+            color: #777;
+        }
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .team-member {
+            width: 300px;
+            margin: 20px;
+            text-align: center;
+            position: relative;
+            perspective: 1000px;
+            transition: transform 0.5s;
+            cursor: pointer;
+        }
+        .team-member:hover {
+            transform: rotateY(180deg);
+        }
+        .team-member img {
+            max-width: 40%;
+            border-radius: 100%;
+            margin-bottom: 10px;
+            margin-top: 60%;
+            margin-left: 5%;
+
+
+        }
+
+        .mem1 img {
+            max-width: 40%;
+            border-radius: 100%;
+            margin-bottom: 10px;
+            margin-top: 40%;
+            margin-left: 5%;
+
+
+        }
+        .mem2 img {
+            max-width: 40%;
+            border-radius: 100%;
+            margin-left: 0%;
+            margin-bottom: 10px;
+            margin-top: 60%;
+
+        }
+        .team-member h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .team-member p {
+            font-size: 16px;
+            color: #777;
+        }
+        .car {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform:matrix3d(3*8);
+            transition: transform 0.5s;
+        }
+        .team-member:hover .card {
+            transform: rotateY(180deg);
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="about-us">
+            <h1>About Adventure Travels</h1>
+            <p>Welcome to Adventure Travels, your gateway to unforgettable journeys around the world. We are passionate about crafting unique travel experiences that cater to your adventurous spirit and desire for exploration.</p>
+        </div>
+        <div class="team-members">
+            <div class="team-member">
+                <div class="cardd">
+                    <img src="anim/pic6.jpg" alt="John Doe - Founder & CEO">
+                    <h3>Jenni Doe</h3>
+                    <p>Founder & CEO</p>
+                </div>
+            </div>
+            <div class="mem1">
+                <div class="card">
+                    <img src="anim/t3.jpg" alt="Jane Smith - Travel Specialist">
+                    <h3>Jane Smith</h3>
+                    <p>Travel Specialist</p>
+                </div>
+            </div>
+            <div class="mem2">
+                <div class="card">
+                    <img src="anim/t4.jpg" alt="Michael Johnson - Adventure Guide">
+                    <h3>amilia Johnson</h3>
+                    <p>Adventure Guide</p>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

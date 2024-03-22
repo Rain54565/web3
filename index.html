@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Times - Your Source for News and Updates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("img/news.jpg");
+           /* background: linear-gradient(110deg, black, white);*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+
+           
+        }
+
+        @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+        .navbar {
+          
+            border-bottom-right-radius: 45px;
+            box-shadow: 5px 5px 10px black;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: textclip 40sec timing-function 10ms iteration-count direction fill-mode;
+        }
+
+
+        @keyframes navbarColorChange {
+    0% {
+        background-position: 0% 0;
+    }
+    25% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0 100%;
+    }
+    100% {
+        background-position: 0% 0;
+    }
+}
+
+.navbar {
+    background: linear-gradient(
+        to right,
+        #cdb22d 0%,
+        #4ee07a 25%,
+        #7f8081 50%,
+        #66aa9a 75%,
+        #dc4545 100%
+    );
+    background-size: 200% 200%;
+    animation: navbarColorChange 60s infinite;
+    transition: background 30ms ease; /* Add a smooth transition for both color and position */
+}
+
+
+
+
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+       .logo a {
+            color: #181e1e;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgb(48, 45, 45), 5px 6px 7px rgb(30, 28, 28);
+            animation: textAnimation 5s infinite;
+        }
+        @keyframes textAnimation {
+      0% { color: #333; }
+      25% { color: #ee7752; }
+      50% { color: #e73c7e; }
+      75% { color: #23a6d5; }
+      100% { color: #23d5ab; }
+    }
+
+
+   
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #000000e6;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+          
+            color:#b51c1ce6;
+            text-shadow: #0f0e0e 5px 10px 10px ;
+            
+        }
+
+   
+
+        .tours {
+            margin-top: 15px;
+            margin-right: 30%;
+            max-width:max-content;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: rgba(83, 76, 76, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            display:inline-block;
+
+            
+           
+           
+
+        }
+        
+     
+
+        @keyframes navbarColorChange {
+    0% {
+        background-position: 0% 0;
+    }
+    25% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0 100%;
+    }
+    100% {
+        background-position: 0% 0;
+    }
+}
+
+.tours {
+    background: linear-gradient(
+        to right,
+        rgba(211, 175, 68, 0.8) 0%,
+        rgba(143, 147, 144, 0.8) 25%,
+        rgba(116, 116, 114, 0.8) 50%,
+        rgba(81, 79, 79, 0.8) 75%,
+        rgba(24, 24, 24, 0.8) 100%
+    );
+    background-size: 200% 200%;
+    animation: navbarColorChange 20s infinite;
+    transition: background 0.1s ease; 
+}
+
+
+        .tour-card {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 10px;
+            padding: 20px;
+            height: 400px;
+            width: 300px;
+            display: inline-block;
+            overflow:hidden;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.56789);
+            
+        }
+
+        
+
+        .tour-card a{
+                    color: #e2dbdbe6;
+                    text-decoration: none;
+                   text-align: justify;
+                   text-align: end;
+            }
+        .tour-card a:hover{
+
+            color: #3679cbe6;
+            
+            text-shadow: #f76666e6 5px 5px 5px;
+
+        }
+
+        .tour-card a:visited{
+
+color: #13d747e6;
+
+text-shadow: #f76666e6 5px 5px 5px;
+
+}
+
+.tour-card a:active{
+
+color: #13bad7e6;
+
+text-shadow: #f76666e6 5px 5px 5px;
+
+}
+
+.tour-card p{
+color: #090101e6;
+}
+
+.tour-card p:hover{
+
+color: #f6f0f0e6;
+
+text-shadow: #f76666e6 5px 5px 5px;
+
+}
+
+        
+    
+
+        .tour-card img {
+            width:100%;
+            border-radius: 10px 10px 0 0;
+            
+        }
+
+        .tour-card h2 {
+            color: #ce7474e6;
+        },
+        .tour-card p,
+        .tour-card a {
+            color: #fff;
+            margin: 0;
+        }
+
+        .tour-card a {
+            display: block;
+            margin-top: 10px;
+            color: #bcc5c8;
+        }
+
+        .tour-card a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: grid;
+            text-decoration: none;
+            color: rgb(32, 31, 31);
+            background-color: #5f6d71;
+            border-radius: 5px;
+            justify-content: center;
+        }
+
+        .cta-button:hover {
+            background-color: #6a6e70;
+        }
+
+        .open-button {
+            background-image: -webkit-radial-gradient(rgb(143, 128, 128), rgb(106, 120, 106), rgb(70, 70, 72));
+            color: rgb(244, 244, 248);
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+            box-shadow: 5px 5px 10px rgb(53, 56, 58) inset;
+        }
+
+        footer {
+            margin-top: 10px;
+            padding: 5px;
+            
+            color: rgb(28, 190, 190);
+            text-align: center;
+            font-size: 12px;
+            border: 1px;
+            border-radius: 10px;
+        }
+
+        .comment-section {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: rgba(60, 60, 60, 0.8);
+            opacity: 7;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            padding: 5px;
+            background-color: #ccc6c6;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .comment strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #3d3b3b;
+        }
+
+        .comment p {
+            color: #ffffff;
+        }
+
+        form {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        textarea {
+            padding: 4px;
+            margin-bottom: 5px;
+            background-color: #c0b9b9e6;
+            border: 1px solid #e8e3e3;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 4px;
+            background-color: #928f8f;
+            color: rgb(255, 254, 254)c2c;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #articleBox {
+            position:fixed;
+            top: 10%;
+            left:70%;
+            
+            
+          
+            color: #0f0e0e;
+            display:grid;
+            grid-auto-flow: row;
+            width:fit-content;
+            max-width: 600px;
+           
+            background-image: linear-gradient(131.83deg, rgba(248, 236, 236,0.8),  rgba(76, 76, 78,0.7));
+
+            border-radius: 8px;
+            border-style;
+            overflow: hidden;
+        
+        }
+        #articleBox:hover{
+            opacity: 1;
+           
+            background-image: -webkit-linear-gradient(100deg,rgb(80, 76, 76),white);
+          
+        }
+        
+
+        h3 {
+            color: #fff;
+            margin-top: 0;
+            padding: 20px;
+            background: linear-gradient(45deg, #4f5154, #4b4d4e);
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+        }
+
+        h3::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #2c2e2f, #485154);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+            z-index: -1;
+        }
+
+        .article {
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .article:hover {
+            transform: scale(1.02);
+            text-shadow: #504e4e 5px 5px 10px;
+        }
+
+        .article a {
+            text-decoration: none;
+            color: #577375;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .article a:hover {
+            text-decoration:none;
+            color: rgb(116, 144, 173);
+        }
+
+     
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Share-V</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="services.html"></a></li>
+                
+                <li><a href="img/contact.html">Contact-us</a></li>
+                <li><a href="userlogin.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="tours">
+        <div class="tour-card">
+            <img src="img/ai.jpg" alt="Card Image">
+            <div class="card-content">
+                <h2>Chat Room</h2>
+                <p></p>
+                <a href="chat.html" class="read-more">Enter Room</a>
+            </div>
+        </div>
+
+        <div class="tour-card">
+            <img src="img/space.jpg" alt="Card Image">
+            <div class="card-content">
+                <h2>Explore</h2>
+                <p></p>
+                <a href="blog/b2.html" class="read-more">Click here</a>
+            </div>
+        </div>
+
+        <div class="tour-card">
+            <img src="img/calm.jpg" alt="Card Image">
+            <div class="card-content">
+                <h2>Project's</h2>
+                <p></p>
+                <a href="dirlist.html" class="read-more">Read more</a>
+            </div>
+        </div>
+
+
+        
+    </section>
+
+    <div id="articleBox">
+        <h3>Notification's</h3>
+    
+        <div class="article">
+            <a href="#">1.</a>
+        
+            <p></p>
+        </div>
+    
+        <div class="article">
+            <a href="#">2.</a>
+            <p></p>
+        </div>
+    
+        <div class="article">
+            <a href="#">3.</a>
+            <p></p>
+        </div>
+    
+    
+    
+    </div>
+    
+
+    <footer>
+      <div class="comment-section">
+          <h2></h2>
+          
+          <div class="comment">
+              <strong>John Doe</strong>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+
+          <div class="comment">
+              <strong>Jane Smith</strong>
+              <p>Great article! I really enjoyed reading it.</p>
+          </div>
+
+          
+
+          <form>
+              <label for="comment">Leave a Comment:</label>
+              <textarea id="comment" name="comment" rows="4" placeholder="Type your comment here"></textarea>
+              <button type="submit">Submit</button>
+          </form>
+      </div>
+  </footer>
+
+</body>
+
+</html>

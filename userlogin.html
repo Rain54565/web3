@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(4deg, rgb(198, 205, 210), rgb(178, 180, 185));
+            font-family: "Sansita Swashed", cursive;
+        }
+        
+        .center {
+            position: relative;
+            padding: 50px 50px;
+            background: rgb(79, 81, 81);
+            border-radius: 10px;
+        }
+        
+        .center h1 {
+            font-size: 2em;
+            border-left: 5px solid rgb(206, 209, 212);
+            padding: 10px;
+            color: #dccfcf;
+            letter-spacing: 5px;
+            margin-bottom: 60px;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+        
+        .center .inputbox {
+            position: relative;
+            width: 300px;
+            height: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .center .inputbox input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border: 2px solid #b6babb;
+            outline: none;
+            background: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1.2em;
+        }
+        
+        .center .inputbox:last-child {
+            margin-bottom: 0;
+        }
+        
+        .center .inputbox span {
+            position: absolute;
+            top: 14px;
+            left: 20px;
+            font-size: 1em;
+            transition: 0.6s;
+            font-family: sans-serif;
+        }
+        
+        .center .inputbox input:focus ~ span,
+        .center .inputbox input:valid ~ span {
+            transform: translateX(-13px) translateY(-35px);
+            font-size: 1em;
+        }
+        
+        .center .inputbox [type="button"] {
+            width: 100%;
+            background: rgb(116, 117, 118);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .center .inputbox [type="button"]:hover {
+            background-color: #1c1d1e;
+        }
+        
+        .click {
+            text-align: center;
+            margin-bottom: 600px;
+            margin-right: 0%;
+        }
+        
+        .click button {
+            background: #ef0e0e;
+            color: rgb(202, 214, 226);
+            border: 2px solid dodgerblue;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .click button:hover {
+            background-color: rgb(31, 32, 33);
+            color: #211d1d;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>User Login</h1>
+        <form>
+            <div class="inputbox">
+                <input type="text" required="required">
+                <span>Email</span>
+            </div>
+            <div class="inputbox">
+                <input type="password" required="required">
+                <span>Password</span>
+            </div>
+            <div class="inputbox">
+                <button type="button" onclick="window.location.href='index.html';">Login</button>
+            </div>
+        </form>
+    </div>
+    <div class="click">
+        <button onclick="window.location.href='login.html';">Admin Mode</button>
+    </div>
+</body>
+</html>

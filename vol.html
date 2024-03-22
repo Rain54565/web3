@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcement Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b5a2a2;
+        }
+        header {
+            background-color: #333;
+            color: #af9a9a;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #363030;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #333;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .announcement-form {
+            margin-bottom: 20px;
+            background-color: #b9b4b4;
+            border-radius: 5px;
+            box-shadow: #333 5px 5px 10px ;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <section id="create">
+        <h2>Create New Announcement</h2>
+        <form class="announcement-form">
+            <label for="announcement-title">Title:</label><br>
+            <input type="text" id="announcement-title" name="announcement-title"><br>
+            <label for="announcement-content">Content:</label><br>
+            <textarea id="announcement-content" name="announcement-content" rows="4" cols="50"></textarea><br>
+            
+            <label>Message Type:</label><br>
+            <input type="radio" id="alert" name="message-type" value="alert">
+            <label for="alert">Alert</label><br>
+            
+            <input type="radio" id="updates" name="message-type" value="updates">
+            <label for="updates">Updates</label><br>
+            
+            <input type="radio" id="reminders" name="message-type" value="reminders">
+            <label for="reminders">Reminders</label><br>
+    
+            <label for="recipient-dropdown">Send to:</label>
+            <select id="recipient-dropdown" name="recipient-dropdown">
+                <option value="volunteers">Volunteers</option>
+                <option value="organizers">Organizers</option>
+                <option value="partners">Community Partners</option>
+                <option value="partners">To All</option>
+            </select><br>
+            <input type="submit" value="Create Announcement">
+        </form>
+    </section>
+    
+    
+    <footer>
+        <p>&copy; 2024 Announcement Management</p>
+    </footer>
+    
+    <script>
+       
+        const announcementForm = document.querySelector('.announcement-form');
+        const announcementList = document.getElementById('announcement-list');
+        
+  
+        function createAnnouncement(title, content) {
+      
+            const listItem = document.createElement('li');
+        
+            const titleElement = document.createElement('h3');
+            titleElement.textContent = title;
+          
+            const contentElement = document.createElement('p');
+            contentElement.textContent = content;
+            
+            listItem.appendChild(titleElement);
+            listItem.appendChild(contentElement);
+           
+            announcementList.appendChild(listItem);
+        }
+     
+        announcementForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const title = document.getElementById('announcement-title').value;
+            const content = document.getElementById('announcement-content').value;
+            createAnnouncement(title, content);
+            
+            announcementForm.reset();
+        });
+    </script>
+</body>
+</html>

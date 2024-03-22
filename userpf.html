@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Published Articles</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #dbe0e4, #9ea5a3);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        #articleList {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(119, 112, 112, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .article {
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .article:last-child {
+            border-bottom: none;
+        }
+
+        .article-content {
+            flex-grow: 1;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .edit,
+        .delete,
+        .share,
+        .mark {
+            cursor: pointer;
+            color: #0b0b0b;
+            text-decoration: none;
+        }
+
+        .edit:hover,
+        .delete:hover,
+        .share:hover,
+        .mark:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="articleList">
+    <div class="article">
+        <div class="article-content">
+            <h3>Article Title 1</h3>
+            <p>Summary of the article. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="actions">
+            <span class="edit">Edit</span>
+            <span class="delete">Delete</span>
+            <span class="share">Share</span>
+            <span class="mark">Mark</span>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-content">
+            <h3>Article Title 2</h3>
+            <p>Summary of the article. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="actions">
+            <span class="edit">Edit</span>
+            <span class="delete">Delete</span>
+            <span class="share">Share</span>
+            <span class="mark">Mark</span>
+        </div>
+    </div>
+
+    <!-- Add more articles as needed -->
+
+</div>
+
+</body>
+</html>
